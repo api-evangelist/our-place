@@ -1,7 +1,27 @@
 aid: our-place
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/our-place.png
 name: Our Place
-description: Our Place is a company surfaced as a portfolio company of 8vc and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Our Place is a direct-to-consumer kitchenware and cookware brand, best known for
+  the multi-purpose Always Pan, selling cookware, bakeware, appliances, tableware, and
+  kitchen tools at fromourplace.com. Surfaced as a portfolio company of 8vc, its digital
+  storefront runs on Shopify and exposes a native agentic-commerce surface: a Universal
+  Commerce Protocol (UCP) merchant profile, a hosted Model Context Protocol (MCP) shopping
+  endpoint, Shopify Customer Account OpenID Connect authentication, and an agent-facing
+  llms.txt / agents.md. This profile was enriched by the API Evangelist pipeline from the
+  company's live public agent surface.
 url: https://raw.githubusercontent.com/api-evangelist/our-place/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +31,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Ecommerce
+- Retail
+- Cookware
+- Consumer
+- Agentic Commerce
+- Shopify
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +49,24 @@ maintainers:
 common:
 - type: Website
   url: https://fromourplace.com
+- type: MCPServer
+  url: mcp/our-place-mcp.yml
+- type: LLMsTxt
+  url: llms/our-place-llms.txt
+- type: WellKnown
+  url: well-known/our-place-well-known.yml
+- type: Authentication
+  url: authentication/our-place-authentication.yml
+- type: OAuthScopes
+  url: scopes/our-place-scopes.yml
+- type: DomainSecurity
+  url: security/our-place-domain-security.yml
+- type: PrivacyPolicy
+  url: https://fromourplace.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://fromourplace.com/policies/terms-of-service
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1

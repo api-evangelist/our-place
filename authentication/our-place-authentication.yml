@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://fromourplace.com/.well-known/openid-configuration
+summary: >-
+  Our Place authenticates customers and agents through Shopify Customer Accounts,
+  an OpenID Connect / OAuth 2.0 provider. The authorization-code flow with PKCE
+  (S256) is used; the customer-account MCP scope gates agentic commerce access.
+schemes:
+- type: openIdConnect
+  name: shopify-customer-account
+  openIdConnectUrl: https://fromourplace.com/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/2441379915
+  authorization_endpoint: https://account.fromourplace.com/authentication/oauth/authorize
+  token_endpoint: https://account.fromourplace.com/authentication/oauth/token
+  end_session_endpoint: https://account.fromourplace.com/authentication/logout
+  jwks_uri: https://account.fromourplace.com/authentication/.well-known/jwks.json
+  grant_types:
+  - authorization_code
+  - refresh_token
+  - urn:ietf:params:oauth:grant-type:jwt-bearer
+  response_types:
+  - code
+  token_endpoint_auth_methods:
+  - client_secret_basic
+  pkce:
+    code_challenge_methods:
+    - S256
+  id_token_signing_alg:
+  - RS256
+  scopes:
+  - openid
+  - email
+  - customer-account-api:full
+  - customer-account-mcp-api:full
+notes:
+- Storefront product/collection JSON is readable without authentication.
+- Agentic checkout via the UCP MCP endpoint still requires buyer payment approval.

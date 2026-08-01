@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of https://fromourplace.com/.well-known/*
+host: fromourplace.com
+paths:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: our-place-openid-configuration.json
+  note: Shopify Customer Account OIDC discovery document
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: our-place-oauth-authorization-server.json
+  note: RFC 8414 authorization-server metadata (identical to OIDC discovery)
+- path: /.well-known/ucp
+  status: 200
+  file: our-place-ucp.json
+  note: Universal Commerce Protocol (UCP) merchant profile - agentic commerce
+- path: /.well-known/security.txt
+  status: 404
+  file: null
+- path: /.well-known/api-catalog
+  status: 404
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 404
+  file: null
