@@ -2,7 +2,8 @@ generated: '2026-07-20'
 method: searched
 source: https://fromourplace.com/.well-known/ucp + https://fromourplace.com/llms.txt
 name: Our Place UCP Shopping MCP
-status: hosted
+status: published
+status_raw: hosted
 description: >-
   Our Place (fromourplace.com) exposes a live, hosted Model Context Protocol
   server for agent-driven commerce via the Universal Commerce Protocol (UCP),
