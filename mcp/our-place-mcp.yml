@@ -4,12 +4,10 @@ source: https://fromourplace.com/.well-known/ucp + https://fromourplace.com/llms
 name: Our Place UCP Shopping MCP
 status: published
 status_raw: hosted
-description: >-
-  Our Place (fromourplace.com) exposes a live, hosted Model Context Protocol
-  server for agent-driven commerce via the Universal Commerce Protocol (UCP),
-  provided natively by the Shopify platform. Agents discover it through the
-  store's /.well-known/ucp merchant profile and /llms.txt. Completing a
-  checkout requires explicit buyer approval.
+description: Our Place (fromourplace.com) exposes a live, hosted Model Context Protocol server for agent-driven
+  commerce via the Universal Commerce Protocol (UCP), provided natively by the Shopify platform. Agents
+  discover it through the store's /.well-known/ucp merchant profile and /llms.txt. Completing a checkout
+  requires explicit buyer approval.
 transport: streamable-http
 protocol: ucp
 endpoints:
@@ -38,9 +36,6 @@ ucp:
   - dev.ucp.shopping.fulfillment
   - dev.ucp.shopping.order
 tools:
-# Documented in the store's own /llms.txt agent flow; the live tools/list
-# handshake requires an agent profile URI (422 without one), so these are the
-# provider-documented UCP shopping tools rather than a fabricated list.
 - name: search_catalog
   description: Search the store catalog for products matching buyer intent.
 - name: create_cart
@@ -55,3 +50,9 @@ notes:
 - Checkout requires contemporaneous human/buyer approval; agents must not complete payment autonomously.
 - MCP endpoint is per-IP rate limited; back off on HTTP 429.
 - Read-only browsing is available without auth via Shopify storefront JSON (/products/{handle}.json, /collections/{handle}/products.json).
+deployment:
+  mode: remote
+  verified: searched
+  tools: 5
+  checked: '2026-08-12'
+  source: catalog MCP census
